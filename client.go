@@ -13,13 +13,14 @@ const apiURL = "https://api.victorops.com/api-public/v1"
 // Client for the VictorOps API
 type Client struct {
 	*http.Client
-	ID, Key string
+	User, ID, Key string
 }
 
 // New VictorOps client for the given API id and key
-func New(apiID, apiKey string) *Client {
+func New(user, apiID, apiKey string) *Client {
 	return &Client{
 		Client: http.DefaultClient,
+		User:   user,
 		ID:     apiID,
 		Key:    apiKey,
 	}
