@@ -9,9 +9,13 @@ import (
 
 // Transition represents a state changes of an incident
 type Transition struct {
-	Name    string    `json:",omitempty"`
-	At      time.Time `json:",omitempty"`
-	Message string    `json:",omitempty"`
+	Name     string    `json:",omitempty"`
+	At       time.Time `json:",omitempty"`
+	Message  string    `json:",omitempty"`
+	By       string    `json:",omitempty"`
+	Manually bool
+	AlertID  string `json:"alertId,omitempty"`
+	AlertURL string `json:"alertUrl,omitempty"`
 }
 
 // Incident represents an incident on victorops
